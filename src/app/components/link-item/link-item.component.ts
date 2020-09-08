@@ -8,11 +8,16 @@ import { Link } from '../../models/link';
   styleUrls: ['./link-item.component.scss']
 })
 export class LinkItemComponent implements OnInit {
-  @Input()link: Link; 
+  @Input()link: Link;
+  isCopied: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  linkCopied() {
+    this.isCopied = true;
+    setTimeout(() => { this.isCopied = !this.isCopied; }, 1000)
+  }
 }
