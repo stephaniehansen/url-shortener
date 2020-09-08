@@ -1,1 +1,7 @@
-<p>shortener works!</p>
+<div class="container-lg">
+<h1>{{url}}</h1>
+  <form>
+    <input type="text" [(ngModel)]="url" name="url" placeholder="Shorten a link here...">
+    <button type="submit" class="btn btn-cyan" (click)="onSubmit()">Shorten it!</button>
+  </form>
+</div>
