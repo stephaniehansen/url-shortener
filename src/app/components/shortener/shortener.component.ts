@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ShortenerService } from '../../services/shortener.service';
+import { Link } from '../../models/link';
 
 @Component({
   selector: 'app-shortener',
@@ -9,14 +10,18 @@ import { ShortenerService } from '../../services/shortener.service';
 })
 export class ShortenerComponent implements OnInit {
   url: string;
-  shortenedUrl;
+  links: Link[] = [];
 
   constructor(private shortenerService: ShortenerService) { }
 
   ngOnInit(): void {}
 
   onSubmit() {
-    this.shortenerService.getShortenedLinks(this.url)
-    .subscribe(response => this.shortenedUrl = response);
+    this.shortenerService.getShortenedLink(this.url)
+    .subscribe(response => {
+      this.links.push({
+        hash: response[Object.keys(response)[0]], 
+        longUrl: this.url})
+    });
   }
 }
