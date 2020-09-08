@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+$cyan: #2bcfcf;
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 52px;
+}
+
+.btn-cyan {
+  color: #fff;
+  background-color: $cyan;
+  border-color: $cyan;
+}
