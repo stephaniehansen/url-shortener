@@ -20,7 +20,7 @@ export class ShortenerComponent implements OnInit {
     this.shortenerService.getShortenedLink(this.url)
     .subscribe(response => {
       this.links.push({
-        hash: response[Object.keys(response)[0]], 
+        shortUrl: "https://rel.ink/" + response[Object.keys(response)[0]], 
         longUrl: this.url})
     });
   }
