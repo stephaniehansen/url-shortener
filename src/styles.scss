@@ -1,8 +1,10 @@
-$cyan: #2bcfcf;
+@import "./src/variables.scss";
 
 body {
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1 {
