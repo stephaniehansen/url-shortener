@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class ShortenerService {
 
   constructor(private http: HttpClient) { }
 
-  getShortenedLinks(url: string) {
+  getShortenedLink(url: string) {
     return this.http.post(this.shortenerUrl, {"url": url})
   }
 }
