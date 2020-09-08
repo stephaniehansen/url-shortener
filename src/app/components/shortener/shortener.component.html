@@ -5,6 +5,8 @@
   </form>
   <h2>Results:</h2>
   <ul class="links">
-    <app-link-item *ngFor="let link of links" [link]="link"></app-link-item>
+    <li *ngFor="let link of links">
+      <app-link-item [link]="link"></app-link-item>
+    </li>
   </ul>
 </div>
