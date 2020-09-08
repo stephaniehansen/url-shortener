@@ -5,8 +5,6 @@
   </form>
   <h2>Results:</h2>
   <ul class="links">
-    <li *ngFor="let link of links">
-      <h1>{{link.longUrl}}</h1> 
-    </li>
+    <app-link-item *ngFor="let link of links" [link]="link"></app-link-item>
   </ul>
 </div>
