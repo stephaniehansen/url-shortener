@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { ShortenerComponent } from './components/shortener/shortener.component';
+import { LinkItemComponent } from './components/link-item/link-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HeroComponent,
-    ShortenerComponent
+    ShortenerComponent,
+    LinkItemComponent
   ],
   imports: [
     BrowserModule,
