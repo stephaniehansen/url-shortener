@@ -3,4 +3,9 @@
 </span>
 <span> - {{ link.longUrl }}</span>
 
-<button [cdkCopyToClipboard]="link.shortUrl">Click to copy</button>
+<button 
+  [cdkCopyToClipboard]="link.shortUrl"
+  (click)="linkCopied()"
+  [innerText]="isCopied ? 'Copied' : 'Copy'"
+  [ngClass]="isCopied ? 'copied' : null">
+</button>
