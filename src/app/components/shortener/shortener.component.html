@@ -4,8 +4,9 @@
     <button type="submit" class="btn btn-cyan" (click)="onSubmit()">Shorten it!</button>
   </form>
   <h2>Results:</h2>
-  {{ url }}
-  <a [href]="'https://rel.ink/' + shortenedUrl.hashid" target="_blank">
-    https://rel.ink/{{ shortenedUrl.hashid }}
-  </a>
+  <ul class="links">
+    <li *ngFor="let link of links">
+      <h1>{{link.longUrl}}</h1> 
+    </li>
+  </ul>
 </div>
