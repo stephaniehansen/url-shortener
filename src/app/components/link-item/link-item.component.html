@@ -1,1 +1,4 @@
-<li>{{ link.longUrl }}</li>
+<span>
+  <a [href]="link.shortUrl" target="_blank">{{ link.shortUrl}}</a>
+</span>
+<span>{{ link.longUrl }}</span>
