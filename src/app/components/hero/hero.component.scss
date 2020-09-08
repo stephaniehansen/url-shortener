@@ -1,9 +1,12 @@
+@import "./src/variables.scss";
+
 .hero {
   height: 620px;
   overflow-x: hidden;
 
   p {
-    color: #7f7f7f;
+    color: $light-grey;
+    line-height: 1.6em;
     padding: 6px 0;
   }
 }
