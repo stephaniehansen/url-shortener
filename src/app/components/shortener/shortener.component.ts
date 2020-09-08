@@ -9,14 +9,14 @@ import { ShortenerService } from '../../services/shortener.service';
 })
 export class ShortenerComponent implements OnInit {
   url: string;
+  shortenedUrl;
 
   constructor(private shortenerService: ShortenerService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onSubmit() {
-    this.shortenerService.getShortenedLinks(this.url);
+    this.shortenerService.getShortenedLinks(this.url)
+    .subscribe(response => this.shortenedUrl = response);
   }
-
 }
