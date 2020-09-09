@@ -1,11 +1,13 @@
+<span class="long-url">{{ link.longUrl }}</span>
 <span>
-  <a [href]="link.shortUrl" target="_blank">{{ link.shortUrl}}</a>
+  <span class="short-url">
+    <a [href]="link.shortUrl" target="_blank">{{ link.shortUrl}}</a>
+  </span>
+  <button 
+    class="btn btn-cyan shadow-none"
+    [cdkCopyToClipboard]="link.shortUrl"
+    (click)="linkCopied()"
+    [innerText]="isCopied ? 'Copied!' : 'Copy'"
+    [class.copied]="isCopied">
+  </button>
 </span>
-<span> - {{ link.longUrl }}</span>
-
-<button 
-  [cdkCopyToClipboard]="link.shortUrl"
-  (click)="linkCopied()"
-  [innerText]="isCopied ? 'Copied' : 'Copy'"
-  [ngClass]="isCopied ? 'copied' : null">
-</button>
