@@ -16,10 +16,14 @@ export class ShortenerComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  formattedUrl() {
+    return this.url.includes('://') ? this.url : this.url = "http://" + this.url;
+  }
+
   onSubmit() {
-    this.shortenerService.getShortenedLink(this.url)
+    this.shortenerService.getShortenedLink(this.formattedUrl())
     .subscribe(response => {
-      this.links.push({
+      this.links.unshift({
         shortUrl: "https://rel.ink/" + response[Object.keys(response)[0]], 
         longUrl: this.url})
     });
