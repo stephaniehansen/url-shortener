@@ -1,12 +1,32 @@
-<div class="container-lg">
-  <form>
-    <input type="text" [(ngModel)]="url" name="url" placeholder="Shorten a link here...">
-    <button type="submit" class="btn btn-cyan" (click)="onSubmit()">Shorten it!</button>
-  </form>
-  <h2>Results:</h2>
-  <ul class="links">
-    <li *ngFor="let link of links">
-      <app-link-item [link]="link"></app-link-item>
-    </li>
-  </ul>
-</div>
+<section class="shortener">
+  <div class="container-lg">
+    <div class="row" id="shortener-form">
+      <div class="form-container">
+        <form name="form" novalidate (ngSubmit)="onSubmit()">
+          <input 
+            type="url" 
+            [(ngModel)]="url" 
+            name="url" 
+            placeholder="Shorten a link here..." 
+            required
+            #urlAddress="ngModel" />
+            <button type="submit" class="btn btn-cyan">
+            Shorten it!
+            </button>
+            <div *ngIf="urlAddress.invalid && (urlAddress.dirty || urlAddress.touched)">
+              <span *ngIf="urlAddress.errors.required" class="error-msg">
+                Please add a link
+              </span>
+            </div>
+        </form>
+      </div>
+    </div>
+    <div class="row" id="link-history">
+      <ul class="links">
+        <li class="link shadow-sm" *ngFor="let link of links">
+          <app-link-item [link]="link"></app-link-item>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
