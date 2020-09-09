@@ -14,18 +14,15 @@ export class ShortenerComponent implements OnInit {
 
   constructor(private shortenerService: ShortenerService) { }
 
-  ngOnInit(): void {}
-
-  formattedUrl() {
-    return this.url.includes('://') ? this.url : this.url = "http://" + this.url;
+  ngOnInit(): void {
+    this.shortenerService.getLinks().subscribe(links => this.links = links)
   }
 
   onSubmit() {
-    this.shortenerService.getShortenedLink(this.formattedUrl())
-    .subscribe(response => {
-      this.links.unshift({
-        shortUrl: "https://rel.ink/" + response[Object.keys(response)[0]], 
-        longUrl: this.url})
-    });
+    this.shortenerService.addLink(this.formattedUrl())
+  }
+
+  formattedUrl() {
+    return this.url.includes('://') ? this.url : this.url = "http://" + this.url;
   }
 }
