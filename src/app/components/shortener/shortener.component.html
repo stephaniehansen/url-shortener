@@ -10,8 +10,8 @@
             placeholder="Shorten a link here..." 
             required
             #urlAddress="ngModel" />
-            <button type="submit" class="btn btn-cyan">
-            Shorten it!
+            <button type="submit" class="btn btn-cyan shadow-none">
+            Shorten It!
             </button>
             <div *ngIf="urlAddress.invalid && (urlAddress.dirty || urlAddress.touched)">
               <span *ngIf="urlAddress.errors.required" class="error-msg">
