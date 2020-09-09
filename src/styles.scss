@@ -12,8 +12,17 @@ h1 {
   font-size: 52px;
 }
 
+h2 {
+  font-weight: 700;
+}
+
 .btn-cyan {
   color: #fff;
   background-color: $cyan;
-  border-color: $cyan;
+  font-weight: 600;
+
+  &:hover {
+    color: #fff;
+    background-color: $light-cyan;
+  }
 }
