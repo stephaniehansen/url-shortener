@@ -12,6 +12,7 @@ import { HeroComponent } from './components/hero/hero.component';
 import { ShortenerComponent } from './components/shortener/shortener.component';
 import { LinkItemComponent } from './components/link-item/link-item.component';
 import { StatisticsComponent } from './components/statistics/statistics.component';
+import { CtaBannerComponent } from './components/cta-banner/cta-banner.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { StatisticsComponent } from './components/statistics/statistics.componen
     HeroComponent,
     ShortenerComponent,
     LinkItemComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    CtaBannerComponent
   ],
   imports: [
     BrowserModule,
