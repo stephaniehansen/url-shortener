@@ -13,6 +13,7 @@ import { ShortenerComponent } from './components/shortener/shortener.component';
 import { LinkItemComponent } from './components/link-item/link-item.component';
 import { StatisticsComponent } from './components/statistics/statistics.component';
 import { CtaBannerComponent } from './components/cta-banner/cta-banner.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CtaBannerComponent } from './components/cta-banner/cta-banner.component
     ShortenerComponent,
     LinkItemComponent,
     StatisticsComponent,
-    CtaBannerComponent
+    CtaBannerComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
