@@ -1,0 +1,12 @@
+@import "./src/variables.scss";
+
+.cta-banner {
+  text-align: center;
+  color: #fff;
+  background: url('../../../assets/images/bg-boost-desktop.svg'), no-repeat, $dark-violet;
+  background-size: cover;
+
+  .btn {
+    margin-top: 16px;
+  }
+}
