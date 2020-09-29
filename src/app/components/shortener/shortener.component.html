@@ -2,22 +2,20 @@
   <div class="container-lg">
     <div class="row" id="shortener-form">
       <div class="form-container">
-        <form name="form" novalidate (ngSubmit)="onSubmit()">
+        <form name="form" (ngSubmit)="onSubmit()">
           <input 
             type="url" 
-            [(ngModel)]="url" 
             name="url" 
             placeholder="Shorten a link here..." 
-            required
-            #urlAddress="ngModel" />
-            <button type="submit" class="btn btn-cyan shadow-none">
+            class="form-control" 
+            [formControl]="url" />
+          <button type="submit" class="btn btn-cyan shadow-none">
             Shorten It!
-            </button>
-            <div *ngIf="urlAddress.invalid && (urlAddress.dirty || urlAddress.touched)">
-              <span *ngIf="urlAddress.errors.required" class="error-msg">
-                Please add a link
-              </span>
-            </div>
+          </button>
+          <div *ngIf="url.invalid && url.touched" class="error-msg" >
+            <span *ngIf="url.errors.required">Please add a link</span>
+            <span *ngIf="url.errors.pattern">Invalid url</span>
+          </div>
         </form>
       </div>
     </div>
