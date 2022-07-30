@@ -1,4 +1,4 @@
-@import "./src/variables.scss";
+@import "./variables.scss";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 body {
@@ -25,6 +25,12 @@ p {
   color: $grey;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 .btn-cyan {
   color: #fff;
   background-color: $cyan;
@@ -34,4 +40,9 @@ p {
     color: #fff;
     background-color: $light-cyan;
   }
+}
+
+.boost-bg {
+  background: url('./assets/images/bg-boost-desktop.svg'), no-repeat, $dark-violet;
+  background-size: cover;
 }

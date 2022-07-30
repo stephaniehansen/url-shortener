@@ -1,0 +1,19 @@
+.shortener {
+  position: relative;
+  &::after {
+    background-color: #f0f1f6;
+    content: " ";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 65px;
+    z-index: -1;
+  }
+  #shortener-form {
+    max-height: 140px;
+    input,
+    button {
+      height: 50px;
+    }
+  }
+}

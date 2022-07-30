@@ -1,30 +1,42 @@
 <section class="shortener">
   <div class="container-lg">
-    <div class="row" id="shortener-form">
-      <div class="form-container">
+    <div class="row rounded-lg p-4 boost-bg" id="shortener-form">
+      <div class="form-container p-3 w-100">
         <form name="form" (ngSubmit)="onSubmit()">
-          <input 
-            type="url" 
-            name="url" 
-            placeholder="Shorten a link here..." 
-            class="form-control" 
-            [formControl]="url" />
-          <button type="submit" class="btn btn-cyan shadow-none">
-            Shorten It!
-          </button>
-          <div *ngIf="url.invalid && url.touched" class="error-msg" >
-            <span *ngIf="url.errors.required">Please add a link</span>
-            <span *ngIf="url.errors.pattern">Invalid url</span>
+          <div class="row">
+            <div class="col">
+              <input 
+              type="url" 
+              name="url" 
+              placeholder="Shorten a link here..." 
+              class="form-control" 
+              [formControl]="url" />
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-cyan shadow-none">
+                Shorten It!
+              </button>
+            </div>
+          </div>
+          <div *ngIf="url.invalid && url.touched" class="text-danger" >
+            <small *ngIf="url.errors.required">
+              Please add a link
+            </small>
+            <small *ngIf="url.errors.pattern">
+              Invalid url
+            </small>
           </div>
         </form>
       </div>
     </div>
-    <div class="row" id="link-history">
-      <ul class="links">
-        <li class="link shadow-sm" *ngFor="let link of links">
-          <app-link-item [link]="link"></app-link-item>
-        </li>
-      </ul>
+    <div *ngIf="links.length > 0" class="mx-4 mt-3" id="link-history">
+      <div class="card">
+        <ul class="list-group list-group-flush links">
+          <li class="link shadow-sm" *ngFor="let link of links">
+            <app-link-item [link]="link"></app-link-item>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>

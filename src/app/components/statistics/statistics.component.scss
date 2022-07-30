@@ -1,0 +1,21 @@
+@import "../../../variables.scss";
+
+.statistics {
+  background-color: #f0f1f6;
+  .card {
+    min-height: 265px;
+    .card-icon {
+      background-color: $dark-violet;
+      width: 75px;
+      height: 75px;
+      border-radius: 50px; 
+      position: absolute;
+      top: -30px;
+      left: 15px;
+    }
+    .card-body {
+      margin-top: 50px;
+    }
+  }
+
+}

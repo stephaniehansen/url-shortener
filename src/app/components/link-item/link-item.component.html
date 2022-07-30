@@ -1,13 +1,19 @@
-<span class="long-url">{{ link.longUrl }}</span>
-<span>
-  <span class="short-url">
-    <a [href]="link.shortUrl" target="_blank">{{ link.shortUrl}}</a>
-  </span>
-  <button 
-    class="btn btn-cyan shadow-none"
-    [cdkCopyToClipboard]="link.shortUrl"
-    (click)="linkCopied()"
-    [innerText]="isCopied ? 'Copied!' : 'Copy'"
-    [class.copied]="isCopied">
-  </button>
-</span>
+<div class="link-item p-3">
+  <div class="row d-flex align-items-center">
+    <div class="col">
+      <span class="long-url">{{ link.longUrl }}</span>
+    </div>
+    <div class="col d-flex justify-content-end short-url">
+      <a [href]="link.shortUrl" target="_blank">{{ link.shortUrl }}</a>
+    </div>
+    <div class="col-auto d-flex justify-content-end">
+      <button 
+        class="btn btn-cyan shadow-none"
+        [cdkCopyToClipboard]="link.shortUrl"
+        (click)="linkCopied()"
+        [innerText]="isCopied ? 'Copied!' : 'Copy'"
+        [class.copied]="isCopied">
+      </button>
+    </div>
+  </div>
+</div>

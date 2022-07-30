@@ -1,42 +1,20 @@
 <section class="statistics">
-  <div class="container">
-    <div class="row d-flex flex-column">
-      <div class="col-md-6 mx-auto">
+  <div class="container py-5">
+    <div class="row mt-3 d-flex flex-column">
+      <div class="col-md-6 mx-auto text-center">
         <h2>Advanced Statistics</h2>
         <p>Track how your links are performing across the web with our advanced statistics dashboard.</p>
       </div>
     </div>
-    <div class="row d-flex justify-content-center mt-4 cards">
-      <div class="col">
+    <div class="row d-flex justify-content-center mt-5 mb-3 cards">
+      <div *ngFor="let benefit of statisticsBenefits" class="col">
         <div class="card border-0 shadow-sm">
-          <div class="card-icon">
-            <img src="../../../assets/images/icon-brand-recognition.svg" alt="Brand Recognition">
+          <div class="card-icon d-flex align-items-center justify-content-center">
+            <img [src]="benefit.img" [alt]="benefit.title">
           </div>
           <div class="card-body text-left">
-            <h3 class="card-title">Brand Recognition</h3>
-            <p class="card-text">Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card border-0 shadow-sm">
-          <div class="card-icon">
-            <img src="../../../assets/images/icon-detailed-records.svg" alt="Brand Recognition">
-          </div>
-          <div class="card-body text-left">        
-            <h3 class="card-title">Detailed Records</h3>
-            <p class="card-text">Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card border-0 shadow-sm">
-          <div class="card-icon">
-            <img src="../../../assets/images/icon-fully-customizable.svg" alt="Brand Recognition">
-          </div>
-          <div class="card-body text-left">
-            <h3 class="card-title">Fully Customizable</h3>
-            <p class="card-text">Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.</p>
+            <h3 class="card-title">{{ benefit.title }}</h3>
+            <p class="card-text">{{ benefit.description }}</p>
           </div>
         </div>
       </div>
